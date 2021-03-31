@@ -30,7 +30,10 @@ public class Ingrediente {
 
 	@Override
 	public String toString() {
-		return "Ingrediente [nome=" + nome + ", dataDeValidade=" + dataDeValidade + "]";
+		return nome
+				+ " - Validade: " + dataDeValidade.getDayOfMonth() + "/" 
+				+ dataDeValidade.getMonth() + "/" 
+				+ dataDeValidade.getYear();
 	}
 
 }

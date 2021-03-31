@@ -106,9 +106,8 @@ public class Cozinha {
 
 
 	public void prepararPratos(){
-		System.out.println("O prato está sendo preparado ...");
-		System.out.println( pratoPrincipal + "está pronto!");
-		System.out.println("O prato está pronto!");
+		System.out.println("O prato está sendo preparado...");
+		System.out.println( pratoPrincipal + " está pronto!");
 		
 	}
 	public void lavarLouca(){
@@ -119,10 +118,19 @@ public class Cozinha {
 
 	@Override
 	public String toString() {
-		return "Cozinha [numeroPratos=" + numeroPratos + ", tipo=" + tipo + ", numeroCozinheiros=" + numeroCozinheiros
-				+ ", tempoPreparo=" + tempoPreparo + ", horaAbertura=" + horaAbertura + ", horaFechamento="
-				+ horaFechamento + ", pratoPrincipal=" + pratoPrincipal + ", listaIngredientes=" + listaIngredientes
-				+ ", listaFuncionario=" + listaFuncionario + "]";
+		return "\n ///// Cozinha "+ tipo
+				+ " ///// \n "
+				+ "\n -> Funcionamento: " + horaAbertura + "h às " + horaFechamento + "h" 
+				+ "\n -> Possui " + numeroPratos + " pratos."
+				+ "\n Seu prato principal é " + pratoPrincipal
+				+ "\n -> O tempo de preparo é "+ tempoPreparo + "m"
+				+ "\n "
+				+ "\n -> Os pratos preparados por essa cozinha possuem os seguintes ingredientes: "
+				+ "\n "+ listaIngredientes
+				+ "\n "
+				+ "\n -> Possui " + numeroCozinheiros + " funcionário que são cozinheiro e auxiliares, sendo eles: "
+				+ "\n " + listaFuncionario
+				+ "\n";
 	}
 
 

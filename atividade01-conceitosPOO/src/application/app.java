@@ -36,15 +36,15 @@ public class app {
 
 		
 		//Funcionários
-		Funcionario cozinheiroMineiro = new Funcionario("a", EnumFuncionario.Cozinheiro);
-		Funcionario cozinheiroChines = new Funcionario("b", EnumFuncionario.Cozinheiro);
-		Funcionario cozinheiroItaliano = new Funcionario("c", EnumFuncionario.Cozinheiro);
-		Funcionario ajudante1 = new Funcionario("d", EnumFuncionario.Ajudante);
-		Funcionario ajudante2 = new Funcionario("e", EnumFuncionario.Ajudante);
-		Funcionario ajudante3 = new Funcionario("f", EnumFuncionario.Ajudante);
-		Funcionario ajudante4 = new Funcionario("g", EnumFuncionario.Ajudante);
-		Funcionario ajudante5 = new Funcionario("h", EnumFuncionario.Ajudante);
-		Funcionario ajudante6 = new Funcionario("i", EnumFuncionario.Ajudante);
+		Funcionario cozinheiroMineiro = new Funcionario("Thaís", EnumFuncionario.Cozinheira);
+		Funcionario cozinheiroChines = new Funcionario("Lien Hu", EnumFuncionario.Cozinheira);
+		Funcionario cozinheiroItaliano = new Funcionario("Marilena Dellucci", EnumFuncionario.Cozinheira);
+		Funcionario ajudante1 = new Funcionario("Mariana", EnumFuncionario.Ajudante);
+		Funcionario ajudante2 = new Funcionario("Laura", EnumFuncionario.Ajudante);
+		Funcionario ajudante3 = new Funcionario("Julia", EnumFuncionario.Ajudante);
+		Funcionario ajudante4 = new Funcionario("Sun T'ien", EnumFuncionario.Ajudante);
+		Funcionario ajudante5 = new Funcionario("Lian Sung", EnumFuncionario.Ajudante);
+		Funcionario ajudante6 = new Funcionario("Stella Dellucci", EnumFuncionario.Ajudante);
 		
 		
 		//Cozinha Mineira
@@ -74,32 +74,50 @@ public class app {
 		System.out.println("\n --------------- Pedidos Abertos ---------------");
 		
 		
-		menu();
+		escolha();
 		
 		Scanner entrada = new Scanner(System.in);
 		int opcao = entrada.nextInt();
+		
 		
 		while(opcao != 4) {
 			
 			switch(opcao) {
 			
 				case 1:
-					cozinhaMineira.prepararPratos();
-					cozinhaMineira.lavarLouca();
+					
+					System.out.println(cozinhaMineira);
+					selecao();
+					int escolha = entrada.nextInt();
+					if(escolha == 1) {
+						cozinhaMineira.prepararPratos();
+						cozinhaMineira.lavarLouca();	
+					}
 					break;
 					
 				case 2:
-					cozinhaChinesa.prepararPratos();
-					cozinhaChinesa.lavarLouca();
+					
+					System.out.println(cozinhaChinesa);
+					selecao();
+					escolha = entrada.nextInt();
+					if(escolha == 1) {
+						cozinhaChinesa.prepararPratos();
+						cozinhaChinesa.lavarLouca();
+					}
 					break;
 					
 				case 3:
-					cozinhaItaliana.prepararPratos();
-					cozinhaItaliana.lavarLouca();
+					
+					System.out.println(cozinhaItaliana);
+					escolha = entrada.nextInt();
+					if(escolha == 1) {
+						cozinhaItaliana.prepararPratos();
+						cozinhaItaliana.lavarLouca();
+					}
 					break;
 			}
 		
-			menu();
+			escolha();
 			opcao = entrada.nextInt();
 		}
 		
@@ -109,7 +127,7 @@ public class app {
 		
 	}
 	
-	public static void menu() {
+	public static void escolha() {
 		System.out.println("\n ----> Escolha: ");
 		System.out.println("\n 1-Cozinha Mineira");
 		System.out.println("\n 2-Cozinha Chinesa");
@@ -118,5 +136,12 @@ public class app {
 		System.out.println("\n Informe a opção desejada: ");
 	}
 
+	public static void selecao() {
+		System.out.println("\n ----> Deseja continuar nessa cozinha?");
+		System.out.println("\n 1- Sim");
+		System.out.println("\n 2- Não");
+		System.out.println("\n Informe a opção desejada: ");
+	}
+	
 }
 
